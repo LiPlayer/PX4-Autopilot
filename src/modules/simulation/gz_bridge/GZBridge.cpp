@@ -95,12 +95,12 @@ int GZBridge::init()
 	}
 
 	// odom: /world/$WORLD/model/$MODEL/link/base_link/odometry_with_covariance
-	std::string odometry_topic = "/model/" + _model_name + "/odometry_with_covariance";
+	// std::string odometry_topic = "/model/" + _model_name + "/odometry_with_covariance";
 
-	if (!_node.Subscribe(odometry_topic, &GZBridge::odometryCallback, this)) {
-		PX4_ERR("failed to subscribe to %s", odometry_topic.c_str());
-		return PX4_ERROR;
-	}
+	// if (!_node.Subscribe(odometry_topic, &GZBridge::odometryCallback, this)) {
+	// 	PX4_ERR("failed to subscribe to %s", odometry_topic.c_str());
+	// 	return PX4_ERROR;
+	// }
 
 	// Laser Scan: optional
 	std::string laser_scan_topic = "/world/" + _world_name + "/model/" + _model_name + "/link/link/sensor/lidar_2d_v2/scan";
